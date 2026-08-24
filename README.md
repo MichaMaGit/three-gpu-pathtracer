@@ -1,18 +1,18 @@
 > ### Why this fork exists
 >
-> I use this library in a desktop material editor and ran into a few issues in the WebGPU
-> branch. This fork is where I stage patches before offering them upstream — it is **not** a
-> maintained alternative and it will fall behind. Use
+> I use this library in a desktop material editor and ran into a few issues in the WebGPU branch.
+> This fork is where I stage patches before offering them upstream. It is **not** a maintained
+> alternative and it will fall behind. Use
 > [gkjohnson/three-gpu-pathtracer](https://github.com/gkjohnson/three-gpu-pathtracer).
 >
 > Filed against upstream so far:
 >
-> - [#826](https://github.com/gkjohnson/three-gpu-pathtracer/issues/826) — the texture atlas
+> - [#826](https://github.com/gkjohnson/three-gpu-pathtracer/issues/826): the texture atlas
 >   repacks on nearly every `setTextures` call (materials sorted by `uuid`, positional hash
->   compare): 760–805 ms per repack with 9 textures. Fix offered in
+>   compare), costing 760 to 805 ms per repack with 9 textures. Fix offered in
 >   [#830](https://github.com/gkjohnson/three-gpu-pathtracer/pull/830), branch
 >   [`atlas-stable-pack`](https://github.com/MichaMaGit/three-gpu-pathtracer/tree/atlas-stable-pack).
-> - [#829](https://github.com/gkjohnson/three-gpu-pathtracer/issues/829) — eight findings from
+> - [#829](https://github.com/gkjohnson/three-gpu-pathtracer/issues/829): eight findings from
 >   wiring Intel Open Image Denoise into the WebGPU path tracer.
 >
 > Every patch here is measured on a real GPU (headless Edge + CDP), not eyeballed.
